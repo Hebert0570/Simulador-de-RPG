@@ -1,0 +1,280 @@
+/* Variáveis de Estilo RPG */
+:root {
+    --cor-fundo: #0F0F15;
+    --cor-header: #111118;
+    --cor-ouro: #FFD700; /* Dourado */
+    --cor-magia: #B388FF; /* Roxo Mágico */
+    --cor-card: #1C1C28;
+    --cor-botao-principal: #8A2BE2; /* Azul Violeta */
+    --cor-dano: #CC0000;
+    --cor-cura: #00CC00;
+}
+
+/* Base Geral */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--cor-fundo);
+    color: #F0F0F0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { margin-top: 0; font-weight: bold; }
+
+a {
+    text-decoration: none;
+    color: var(--cor-magia);
+    transition: color 0.3s ease;
+}
+
+a:hover { color: var(--cor-ouro); }
+
+/* Header e Navegação */
+header {
+    background-color: var(--cor-header);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--cor-ouro);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    color: var(--cor-ouro);
+    font-size: 2em;
+}
+
+header nav {
+    display: flex;
+    gap: 20px; 
+}
+
+header nav a {
+    color: #F0F0F0;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--cor-ouro);
+    text-decoration: underline;
+}
+
+/* Seções Principais */
+.secao-rpg {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.secao-rpg h2 {
+    color: var(--cor-magia);
+    margin-bottom: 40px;
+    border-bottom: 1px solid #444455;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+/* Formulário (form-alianca) */
+.form-alianca {
+    max-width: 450px;
+    margin: 0 auto 50px auto;
+    padding: 40px;
+    background-color: var(--cor-card);
+    border: 2px solid var(--cor-magia);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-alianca label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--cor-ouro);
+    font-size: 1.1em;
+}
+
+.form-alianca input,
+.form-alianca select {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #444455;
+    background-color: #22222E;
+    color: #F0F0F0;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+/* Botões: .botao e .botao-atacar */
+.botao,
+.botao-atacar,
+.acao-batalha {
+    background-color: var(--cor-botao-principal);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.botao:hover,
+.botao-atacar:hover,
+.acao-batalha:hover {
+    background-color: #A067FF;
+    box-shadow: 0 0 15px var(--cor-magia);
+}
+
+.botao-atacar {
+    background-color: var(--cor-dano);
+}
+
+.botao-atacar:hover {
+    background-color: #FF4444;
+    box-shadow: 0 0 15px var(--cor-dano);
+}
+
+/* Cards (Ficha e Monstro) */
+.card-mestre {
+    flex-basis: 300px;
+    padding: 25px;
+    text-align: center;
+    background-color: var(--cor-card);
+    border: 1px solid #444455;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.card-mestre img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid var(--cor-ouro);
+}
+
+.card-mestre h3 {
+    color: var(--cor-ouro);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+#monstro-card {
+    border: 2px solid var(--cor-dano); 
+}
+
+
+/* Layout de Batalha (REQUISITO: Flexbox para Responsividade) */
+/* Usamos a div 'arena' como container principal e aplicamos Flexbox para centralizar */
+.arena {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Área de Ações */
+#area-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.acao-batalha {
+    flex-grow: 0.5; /* Faz os botões expandirem um pouco */
+    max-width: 250px;
+    text-align: center;
+}
+
+/* Log de Batalha */
+#log-batalha {
+    background-color: #111;
+    border: 1px solid var(--cor-magia);
+    padding: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#log-batalha h3 {
+    color: var(--cor-ouro);
+}
+
+#log-lista {
+    list-style: none;
+    padding: 0;
+}
+
+#log-lista li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #333;
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+/* Estilos de Log para diferenciar mensagens */
+.log-ataque { color: var(--cor-dano); }
+.log-cura { color: var(--cor-cura); }
+.log-sistema { color: var(--cor-ouro); }
+
+/* Footer */
+footer {
+    background-color: var(--cor-header);
+    color: #F0F0F0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid var(--cor-magia);
+    font-size: 0.9em;
+}
+
+/* REQUISITO: Responsividade (Media Query) */
+@media (max-width: 768px) {
+    header, footer {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    /* Centraliza os cards em telas menores */
+    .arena {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-mestre {
+        max-width: 350px;
+    }
+
+    #area-acoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .botao-atacar,
+    .acao-batalha {
+        width: 80%;
+        max-width: 300px;
+    }
+}
