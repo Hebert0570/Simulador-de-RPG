@@ -178,7 +178,6 @@ header nav a:hover {
 
 
 /* Layout de Batalha (REQUISITO: Flexbox para Responsividade) */
-/* Usamos a div 'arena' como container principal e aplicamos Flexbox para centralizar */
 .arena {
     display: flex;
     justify-content: center;
@@ -194,7 +193,7 @@ header nav a:hover {
 }
 
 .acao-batalha {
-    flex-grow: 0.5; /* Faz os botões expandirem um pouco */
+    flex-grow: 0.5;
     max-width: 250px;
     text-align: center;
 }
