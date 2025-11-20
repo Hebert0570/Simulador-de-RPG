@@ -156,8 +156,6 @@ function curarHeroi() {
     }
 }
 
-
-// Ataque Simples do Monstro (Chamado em um setTimeout)
 function ataqueMonstroSimples() {
     const danoMonstro = danoBaseMonstro;
     heroiHP = heroiHP - danoMonstro;
@@ -174,7 +172,6 @@ function ataqueMonstroSimples() {
 function finalizarJogo(vitoria) {
     jogoAtivo = false;
     
-    // Desabilita botões para parar o jogo (REQUISITO: Manipulação do DOM)
     document.getElementById('btn-atacar').disabled = true;
     document.getElementById('btn-curar').disabled = true;
     
