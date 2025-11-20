@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornada Épica: Simulador de Batalha Simples </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Simulador de Batalha: A Jornada</h1>
+     <nav>
+        <a href="#ficha">Ficha do Herói</a>
+     </nav>
+  </header>
+
+  <main>
+    <section id="ficha" class="secao-rpg">
+        <h2>Criação do Herói</h2>
+        <form id="form-heroi" class="form-alianca">
+         <label for="nome">Nome de Aventureiro:</label>
+         <input type="text" id="nome" name="nome" placeholder="Heroi da Espada">
+
+         <label for="avatar-url">URL do Avatar (Link da Imagem):</label>
+            <input type="text" id="avatar-url" name="avatar-url" placeholder="Cole o link da sua imagem aqui (Opcional)">
+
+         <label for="classe">Classe:</label>
+         <select id="classe" name="classe" required>
+            <option value="" disabled selected>Escolha sua classe... </option>
+            <option value="mago">Mago (Dano Mágico)</option>
+            <option value="guerreiro">Guerreiro (Dano Forte)</option>
+            <option value="ladino">Ladino (Dano Crítico) </option>
+         </select>
+
+         <button type="submit" class="botao">Forjar Personagem</button>
+        </form>
+
+        <div id="ficha-exibicao" class="card-mestre" style="display:none;">
+            <h3 id="heroi-nome">[Nome do Herói]</h3>
+            <p>Classe: <strong id=heroi-classe>[Classe]</strong></p>
+            <p>Status: <span id="heroi-status">HP: 100 | Poções: 3</span></p>
+    </section>
+
+    <hr>
+
+    <section id="combate" class="secao-rpg" style="display:none;">
+        <h2>O Campo de Batalha</h2>
+
+        <div class="arena">
+            <article class="card-mestre" id="monstro-card">
+                <img id="monstro-avatar" src="assets/Bc929acfd5d867c805c06dbe8b05855c.webp" alt="Imagem-Monstro">
+                <h3 id="nome-monstro">K'tharr, o Pesadelo Carcinoide</h3>
+                <p>Status: <span id="monstro-status">HP: 100</span></p>
+                </article>
+        </div>
+    </div>
+
+    <div id="area-acoes">
+        <button id="btn-atacar" class="botao-atacar" onclick="atacarMonstro()">⚡ Atacar!</button>
+        <button id="btn-curar" class="acao-batalha" onclick="curarHeroi()">🧪 Curar (3)</button>
+    </div>
+
+    <div id="log-batalha">
+        <h3>Pergaminho de Eventos</h3>
+        <ul id="log-lista">
+        </ul>
+    </div>
+    </section>
+
+</main>
+
+    <footer>
+        <p>Projeto Final Desenvolvimneto Web Front-End | ALuno: Hebert Vinicius</p>
+        <div id="social">
+            <a href="#https://github.com/Hebert0570" target="_blank">Github</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
